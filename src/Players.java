@@ -19,4 +19,13 @@ public class Players {
             }
         }
     }
+    /*
+    * playerSequence() method to create sequence of player to play the game
+    * */
+    public void playerSequence() {
+        for (int k=0;k<= persons.size()-1;k++)
+        {
+            System.out.println(persons.get(k)+" will play "+ (k+1) +" time ");
+        }
+    }
 }
