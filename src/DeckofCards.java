@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class DeckofCards {
     ArrayList<Card> deckofCards = new ArrayList<Card>();            //Creating arraylist for deck of cards of type Card
@@ -19,12 +20,26 @@ public class DeckofCards {
         obj.print();
         obj1.inputPlayer();
         obj1.playerSequence();
+        obj.shuffle();
     }
     /*
      * print() method to print combination of cards formed
      * */
     public void print(){
         System.out.println(deckofCards.toString());
+    }
+    /*
+    * shuffle() method to shuffle cards before distributing to players
+    * */
+    public void shuffle(){
+        Random random = new Random();
+        for (int i = 0; i < deckofCards.size(); i++) {
+            int j = random.nextInt(deckofCards.size() - 1);
+            Card card1 = deckofCards.get(i);
+            Card card2 = deckofCards.get(j);
+            deckofCards.set(i, card2);
+            deckofCards.set(j, card1);
+        }
     }
 }
 
